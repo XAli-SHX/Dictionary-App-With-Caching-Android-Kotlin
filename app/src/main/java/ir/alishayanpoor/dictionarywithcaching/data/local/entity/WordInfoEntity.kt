@@ -7,7 +7,7 @@ import ir.alishayanpoor.dictionarywithcaching.domain.model.Meaning
 @Entity(tableName = "word_info_table")
 data class WordInfoEntity(
     val word: String,
-    val phonetic: String,
+    val phonetic: String?,
     val meanings: List<Meaning>,
     @PrimaryKey val id: Int? = null,
 )
