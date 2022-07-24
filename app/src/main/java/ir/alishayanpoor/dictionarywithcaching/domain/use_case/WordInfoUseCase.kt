@@ -4,8 +4,9 @@ import ir.alishayanpoor.dictionarywithcaching.domain.model.WordInfo
 import ir.alishayanpoor.dictionarywithcaching.domain.repo.WordInfoRepo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class WordInfoUseCase(
+class WordInfoUseCase @Inject constructor(
     private val repo: WordInfoRepo,
 ) {
     fun getWordInfo(word: String): Flow<List<WordInfo>> {
