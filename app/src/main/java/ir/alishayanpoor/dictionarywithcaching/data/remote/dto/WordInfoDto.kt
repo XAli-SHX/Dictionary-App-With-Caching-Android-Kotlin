@@ -10,15 +10,15 @@ class WordInfoDto : ArrayList<WordInfoDto.WordInfoDtoItem>() {
         @SerializedName("phonetic")
         val phonetic: String,
         @SerializedName("phonetics")
-        val phonetics: List<Phonetic>,
+        val phonetics: List<PhoneticDto>,
         @SerializedName("meanings")
-        val meanings: List<Meaning>,
+        val meanings: List<MeaningDto>,
         @SerializedName("license")
-        val license: License,
+        val license: LicenseDto,
         @SerializedName("sourceUrls")
         val sourceUrls: List<String>,
     ) {
-        data class Phonetic(
+        data class PhoneticDto(
             @SerializedName("text")
             val text: String,
             @SerializedName("audio")
@@ -26,27 +26,20 @@ class WordInfoDto : ArrayList<WordInfoDto.WordInfoDtoItem>() {
             @SerializedName("sourceUrl")
             val sourceUrl: String,
             @SerializedName("license")
-            val license: License,
-        ) {
-            data class License(
-                @SerializedName("name")
-                val name: String,
-                @SerializedName("url")
-                val url: String,
-            )
-        }
+            val license: LicenseDto,
+        )
 
-        data class Meaning(
+        data class MeaningDto(
             @SerializedName("partOfSpeech")
             val partOfSpeech: String,
             @SerializedName("definitions")
-            val definitions: List<Definition>,
+            val definitions: List<DefinitionDto>,
             @SerializedName("synonyms")
             val synonyms: List<String>,
             @SerializedName("antonyms")
             val antonyms: List<String>,
         ) {
-            data class Definition(
+            data class DefinitionDto(
                 @SerializedName("definition")
                 val definition: String,
                 @SerializedName("synonyms")
@@ -58,7 +51,7 @@ class WordInfoDto : ArrayList<WordInfoDto.WordInfoDtoItem>() {
             )
         }
 
-        data class License(
+        data class LicenseDto(
             @SerializedName("name")
             val name: String,
             @SerializedName("url")
