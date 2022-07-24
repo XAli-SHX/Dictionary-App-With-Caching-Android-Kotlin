@@ -7,6 +7,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import ir.alishayanpoor.dictionarywithcaching.data.local.Converters
 import ir.alishayanpoor.dictionarywithcaching.data.local.WordInfoDatabase
 import ir.alishayanpoor.dictionarywithcaching.data.remote.DictionaryApi
 import ir.alishayanpoor.dictionarywithcaching.data.repo.WordInfoRepoImpl
@@ -35,7 +36,7 @@ object WordInfoModule {
     @Singleton
     fun provideWordInfoDatabase(app: Application): WordInfoDatabase {
         return Room.databaseBuilder(app, WordInfoDatabase::class.java, "word_db")
-            .addTypeConverter(GsonParser(Gson()))
+            .addTypeConverter(Converters(GsonParser(Gson())))
             .build()
     }
 
