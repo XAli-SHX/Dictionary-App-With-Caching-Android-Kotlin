@@ -10,4 +10,8 @@ interface DictionaryApi {
     suspend fun getWordInfo(
         @Path("word") word: String,
     ): Response<WordInfoDto>
+
+    companion object {
+        const val BASE_URL = "https://api.dictionaryapi.dev/api/v2/entries/en/"
+    }
 }
