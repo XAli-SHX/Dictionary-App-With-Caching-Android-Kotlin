@@ -6,7 +6,6 @@ fun WordInfoEntity.toWordInfo(): WordInfo {
     return WordInfo(
         meanings = meanings,
         word = word,
-        origin = origin,
         phonetic = phonetic
     )
 }
