@@ -8,7 +8,6 @@ import ir.alishayanpoor.dictionarywithcaching.domain.model.Meaning
 data class WordInfoEntity(
     val word: String,
     val phonetic: String,
-    val origin: String,
     val meanings: List<Meaning>,
-    @PrimaryKey val id: Int,
+    @PrimaryKey val id: Int? = null,
 )
